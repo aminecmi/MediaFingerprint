@@ -2,7 +2,7 @@ package bou.amine.apps.mediafingerprint
 
 import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.FingerprintGestureController
-import android.accessibilityservice.FingerprintGestureController.FingerprintGestureCallback
+import android.accessibilityservice.FingerprintGestureController.*
 import android.content.Intent
 import android.os.Build
 import android.os.Handler
@@ -63,7 +63,7 @@ class SensorService : AccessibilityService() {
                     super.onGestureDetected(gesture)
                     val eventtime = SystemClock.uptimeMillis()
                     Toast.makeText(applicationContext, "Gesture: $gesture", Toast.LENGTH_SHORT).show()
-                    if (gesture == 1) {
+                    if (gesture == FINGERPRINT_GESTURE_SWIPE_RIGHT) {
                         val downIntent = Intent(Intent.ACTION_MEDIA_BUTTON, null)
                         val downEvent = KeyEvent(
                             eventtime, eventtime,
@@ -82,7 +82,7 @@ class SensorService : AccessibilityService() {
                     }
 
 
-                    if (gesture == 2) {
+                    if (gesture == FINGERPRINT_GESTURE_SWIPE_LEFT) {
                         val downIntent = Intent(Intent.ACTION_MEDIA_BUTTON, null)
                         val downEvent = KeyEvent(
                             eventtime, eventtime,
@@ -101,7 +101,7 @@ class SensorService : AccessibilityService() {
                     }
 
 
-                    if (gesture == 4) {
+                    if (gesture == FINGERPRINT_GESTURE_SWIPE_UP) {
                         val downIntent = Intent(Intent.ACTION_MEDIA_BUTTON, null)
                         val downEvent = KeyEvent(
                             eventtime, eventtime,
@@ -120,7 +120,7 @@ class SensorService : AccessibilityService() {
                     }
 
 
-                    if (gesture == 8) {
+                    if (gesture == FINGERPRINT_GESTURE_SWIPE_DOWN) {
                         val downIntent = Intent(Intent.ACTION_MEDIA_BUTTON, null)
                         val downEvent = KeyEvent(
                             eventtime, eventtime,
