@@ -13,6 +13,7 @@ This rely on accessibility service to listen to fingerprint gestures. That have 
 - It needs the screen to be on, to be used.
 - It overrides the "system" gesture for notifications.
 - It needs to be disabled from the settings to stop.
+- [May partly work on some devices](https://www.reddit.com/r/androiddev/comments/8x195t/_/e20nii2)
 
 ## Contribution
 
